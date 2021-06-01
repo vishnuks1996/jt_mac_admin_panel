@@ -1,12 +1,15 @@
-import react from 'react';
+import React from 'react'
 import "./calendar.css";
 import "./style.css";
 
+/**
+* @author
+* @function Header
+**/
 
-function Header()
-{
-    return(
-        <header className="bg-white shadow-sm">
+const Header = (props) => {
+  return(
+    <header className="bg-white shadow-sm">
         <nav className="navbar navbar-expand-sm p-0">
           <div className="container-fluid">
             <a className="navbar-brand p-0" href="index.html"><img src="images/jtmac_logo.PNG" alt="JTMaC" className="logo" /></a>
@@ -29,6 +32,8 @@ function Header()
           </div>
         </nav>
       </header>
-    );
-};
-export default Header;
+   )
+
+ }
+
+export default Header

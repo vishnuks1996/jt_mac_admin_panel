@@ -1,9 +1,13 @@
-import react from 'react';
+import React from 'react'
 
-function Payment3()
-{
-    return(
-        <div className="payment_page3 page_padding"> {/* payment page start */}
+/**
+* @author
+* @function Payment3
+**/
+
+const Payment3 = (props) => {
+  return(
+    <div className="payment_page3 page_padding"> {/* payment page start */}
         {/* section1 starts */}
         <section className="section1 pb-5">
           <div className="title bg_green py-3 mb-5">
@@ -18,6 +22,8 @@ function Payment3()
         {/* section1 end */}
         <hr />
       </div> /* payment page end */
-    );
-};
-export default Payment3;
+   )
+
+ }
+
+export default Payment3

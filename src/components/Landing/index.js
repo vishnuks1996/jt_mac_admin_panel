@@ -1,9 +1,13 @@
-import react from 'react';
+import React from 'react'
 
-function Landing()
-{
-    return(
-        <div className="home_page page_padding"> {/* home page start */}
+/**
+* @author
+* @function Landing
+**/
+
+const Landing = (props) => {
+  return(
+    <div className="home_page page_padding"> {/* home page start */}
         {/* section1 starts */}
         <section className="section1 d-flex align-items-center">
           <div className="container">
@@ -211,6 +215,8 @@ function Landing()
           </div>
         </section>
       </div> 
-    );
-};
-export default Landing;
+   )
+
+ }
+
+export default Landing

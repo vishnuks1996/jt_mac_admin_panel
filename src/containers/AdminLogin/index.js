@@ -1,9 +1,13 @@
-import react from 'react';
+import React from 'react'
 
-function AdminLogin()
-{
-    return(
-        <div className="admin_login_page page_padding"> {/* admin login page start */}
+/**
+* @author
+* @function AdminLogin
+**/
+
+const AdminLogin = (props) => {
+  return(
+    <div className="admin_login_page page_padding"> {/* admin login page start */}
         {/* section1 starts */}
         <section className="section1 pb-5">
           <div className="title bg_green py-3 mb-5">
@@ -29,6 +33,8 @@ function AdminLogin()
         {/* section1 end */}
         <hr />
       </div> /* admin login end */
-    );
-};
-export default AdminLogin;
+   )
+
+ }
+
+export default AdminLogin

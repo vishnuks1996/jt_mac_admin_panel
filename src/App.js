@@ -1,16 +1,17 @@
-import react from 'react';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 
 import Footer from './components/footer';
-import Header from './components/Header.js';
-import Landing from './components/Landing.js';
-import Appointment from './container/Appointment.js';
-import Payment1 from './container/Payment1.js';
-import Payment2 from './container/Payment2.js';
-import Payment3 from './container/Payment3.js';
-import AdminLogin from './container/AdminLogin.js';
-import AdminDashboard from './container/AdminDashboard.js';
-import Configuration from './container/Configuration.js';
+import Header from './components/Header';
+import Landing from './components/Landing';
+import Appointment from './container/Appointment';
+import Payment1 from './container/Payment1';
+import Payment2 from './container/Payment2';
+import Payment3 from './container/Payment3';
+import AdminLogin from './container/AdminLogin';
+import AdminDashboard from './container/AdminDashboard';
+import Configuration from './container/Configuration';
 
 
 
