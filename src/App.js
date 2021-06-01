@@ -18,6 +18,7 @@ function App() {
   return (
     <div>
       <Header></Header>
+      <h1>heading</h1>
       {/* <Landing></Landing> */}
       {/* <Appointment></Appointment> */}
       {/* <Payment1></Payment1> */}
