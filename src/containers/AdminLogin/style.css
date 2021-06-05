@@ -1,0 +1,23 @@
+.page_padding.admin_login_page .section1
+{
+  margin-top: 62px;
+  padding-top: 0;
+}
+
+/*admin_login_page page start*/
+.admin_login_page .section1
+{
+  background-image: url(admin_login.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  min-height: 600px;
+}
+.admin_login_page .section1 .content
+{
+background-color: #32624775;
+    max-width: 500px;
+    margin: auto;
+    backdrop-filter: blur(4px);
+}
+/*admin_login_page page end*/

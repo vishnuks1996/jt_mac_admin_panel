@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 /**
 * @author
@@ -78,8 +79,7 @@ const Appointment = (props) => {
               <div id="picker" />
             </div>
           </div>
-          <a href="payment1.html" className="text-end"><button className="shadow border-0 bg_yellow text-white btn_primary rounded-pill"> Get Appointment
-              <i className="fas fa-chevron-right bg-white color_yellow" /></button></a>
+          <Link to={'/payment1'}><div className="text-end"><button className="shadow border-0 bg_yellow text-white btn_primary rounded-pill"> Get Appointment <i className="fas fa-chevron-right bg-white color_yellow" /></button></div></Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 /**
 * @author
@@ -44,8 +45,8 @@ const Payment1 = (props) => {
             </div>
             <div className="row justify-content-center">
               <div className="col-md-6 text-end">
-                <a href="appointment.html"><button className="shadow border-0 bg-white text_green bg-white btn_primary rounded-pill"> Cancel<i className="fas fa-times bg-secondary text-white" /></button></a>
-                <a href="payment2.html" className><button className="shadow border-0 bg_yellow text-white btn_primary rounded-pill"> Get Appointment<i className="fas fa-chevron-right bg-white color_yellow" /></button></a>
+              <Link to={'/appointment'}><button className="shadow border-0 mx-2 bg-white text_green bg-white btn_primary rounded-pill"> Cancel<i className="fas fa-times bg-secondary text-white" /></button></Link>
+                <Link to={'/payment2'}><button className="shadow border-0 bg_yellow text-white btn_primary rounded-pill"> Get Appointment<i className="fas fa-chevron-right bg-white color_yellow" /></button></Link>
               </div>
             </div>
           </div>

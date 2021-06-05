@@ -1,0 +1,11 @@
+/* footer */
+footer li a
+{
+  font-size: 26px;
+  margin: 0 5px;
+}
+footer .imit_logo {
+  width: 32px;
+  vertical-align: baseline;
+}
+/* footer */

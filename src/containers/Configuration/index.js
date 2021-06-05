@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import './style.css';
 
 /**
 * @author
@@ -19,9 +21,9 @@ const Configuration = (props) => {
             <div className="container d-flex">
               <h3 className="text-white m-0"><strong>Configuration</strong></h3>
               <ul className="m-0 p-0 d-flex ms-auto">
-                <li><a href="admin-dashboard.html" className="text-white d-block py-2 ps-2 ms-2"><i className="fas fa-user-tie me-1" /> Admin</a></li>
-                <li><a href="configuration.html" className="text-white d-block py-2 ps-2 ms-2"><i className="fas fa-user-cog me-1" /> Configuration</a></li>
-                <li><a href="admin-login.html" className="text-white d-block py-2 ps-2 ms-2"><i className="fas fa-sign-out-alt me-1" /> Logout</a></li>
+                <li><Link to={'/admindashboard'}><div className="text-white d-block py-2 ps-2 ms-2"><i className="fas fa-user-tie me-1" /> Admin</div></Link></li>
+                <li><Link to={'/configuration'}><div className="text-white d-block py-2 ps-2 ms-2"><i className="fas fa-user-cog me-1" /> Configuration</div></Link></li>
+                <li><Link to={'/adminlogin'}><div className="text-white d-block py-2 ps-2 ms-2"><i className="fas fa-sign-out-alt me-1" /> Logout</div></Link></li>
               </ul>
             </div>
           </div>

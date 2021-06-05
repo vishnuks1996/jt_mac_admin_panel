@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 /**
 * @author
@@ -19,7 +20,7 @@ const Payment2 = (props) => {
         <div className="row justify-content-center">
           <div className="col-md-6">
             <div className="form-floating mb-2">
-              <input type="text" className="form-control" maxLength={13} id="phone" defaultValue={+91 } placeholder="+91 3232323232" />
+              <input type="text" className="form-control" maxLength={13} id="phone" defaultValue={ +91 } placeholder="+91 3232323232" />
               <label htmlFor="phone">Enter Mobile Number</label>
             </div>
             <small className="text-secondary">OTP send to +91 9595959595</small>
@@ -33,8 +34,8 @@ const Payment2 = (props) => {
         </div>
         <div className="row justify-content-center mt-3">
           <div className="col-md-6 text-end">
-            <a href="appointment.html"><button className="shadow border-0 bg-white text_green bg-white btn_primary rounded-pill"> Cancel<i className="fas fa-times bg-secondary text-white" /></button></a>
-            <a href="payment3.html" className><button className="shadow border-0 bg_yellow text-white btn_primary rounded-pill"> Confirm<i className="fas fa-chevron-right bg-white color_yellow" /></button></a>
+          <Link to={'/appointment'}><button className="shadow border-0 bg-white text_green bg-white btn_primary rounded-pill"> Cancel<i className="fas fa-times bg-secondary text-white" /></button></Link>
+            <Link to={'/payment3'}><button className="shadow border-0 bg_yellow text-white btn_primary rounded-pill"> Confirm<i className="fas fa-chevron-right bg-white color_yellow" /></button></Link>
           </div>
         </div>
       </div>

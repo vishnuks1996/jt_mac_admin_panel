@@ -1,0 +1,71 @@
+/*configuration page start*/
+.configuration_page .sidebar
+{
+  /* background: rgb(18,55,41);
+  background: -moz-linear-gradient(180deg, rgb(28 109 78) 0%, rgba(5,10,8,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgb(28 109 78) 0%, rgba(5,10,8,1) 100%);
+  background: linear-gradient(180deg, rgb(28 109 78) 0%, rgba(5,10,8,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#123729",endColorstr="#050a08",GradientType=1);
+
+  z-index: 0;
+  top: 100px;
+  width: 225px;
+  padding-top: 70px; */
+}
+.configuration_page .sidebar li:hover
+{
+  /* background-color: #ffffff3b; */
+}
+.configuration_page .section1 .pull-right
+{
+  /* padding-left: 220px; */
+}
+.configuration_page .section1 .content1 .nav > div
+{
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.configuration_page .section1 .content1 .nav > div.active
+{
+   box-shadow: 0px 2px 7px -1px #7b4e09;
+   opacity: 1;
+}
+
+.configuration_page .section1 .content2 .content .controls button
+{
+  font-size: 12px;
+  padding: 5px 6px;
+}
+.configuration_page .section1 .content2 .content .controls button i {
+  width: 25px;
+  height: 25px;
+  margin-left: 3px;
+  padding: 6px;
+}
+.configuration_page .section1 .content2
+{
+max-width: 720px;
+margin: auto;
+}
+.configuration_page .section1 .content2 .content .controls .form-control
+{
+  padding: 5px 6px 0px 6px;
+  height: 42px;
+  max-width: 140px;
+}
+.configuration_page .section1 .content2 .content .controls label
+{
+padding-top: 7px;
+}
+.configuration_page .section1 .content2 #pills_issue .content
+{
+  max-width: 400px;
+  margin: auto;
+}
+.configuration_page .section1 .content2 #pills_price .content
+{
+  max-width: 500px;
+  margin: auto;
+}
+/*configuration page end*/

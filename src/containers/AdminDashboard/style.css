@@ -1,0 +1,44 @@
+/*admin dashboard page start*/
+.admin_dashboard_page .section1 .content1 h5
+{
+  font-weight: 600;
+}
+.admin_dashboard_page .section1 .content1 img
+{
+  width: 60px;
+  border: 4px solid #32624754;
+  margin-right: 15px;
+}
+.admin_dashboard_page .section1 .box h6
+{
+  font-weight: 600;
+}
+.admin_dashboard_page .section1 .box .count
+{
+  min-width: 35px;
+}
+.admin_dashboard_page .section1 .content5 select
+{
+  font-size: 11px;
+  height: 35px;
+  width: auto;
+}
+.admin_dashboard_page .section1 .content5 input
+{
+height: 35px;
+    width: 100px;
+    font-size: 11px;
+    position: relative;
+    padding-left: 7px;
+}
+.admin_dashboard_page .section1  input[type="date"]::-webkit-calendar-picker-indicator { position: absolute; right: 0; }
+.admin_dashboard_page .section1 .content5 .box.slots
+{
+  font-size: 13px;
+}
+.admin_dashboard_page .section1 .content5
+{
+max-height: 432px;
+    overflow: auto;
+}
+/*admin dashboard page end*/

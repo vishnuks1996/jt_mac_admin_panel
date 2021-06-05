@@ -1,4 +1,6 @@
 import React from 'react'
+import './style.css';
+import { Link } from 'react-router-dom'
 
 /**
 * @author
@@ -26,7 +28,7 @@ const AdminLogin = (props) => {
                 <label htmlFor="pass">Password</label>
               </div>
               {/* <a href="" class="float-end text-white">Forgot Password?</a> */}
-              <a href="admin-dashboard.html" className="text-end w-100 d-inline-block"><button className="shadow border-0 bg_yellow text-white btn_primary rounded-pill mt-3"> Sign In<i className="fas fa-user-tie bg-white color_yellow" /></button></a>
+              <Link to={'/admindashboard'}><div className="text-end w-100 d-inline-block"><button className="shadow border-0 bg_yellow text-white btn_primary rounded-pill mt-3"> Sign In<i className="fas fa-user-tie bg-white color_yellow" /></button></div></Link>
             </div>
           </div>
         </section>

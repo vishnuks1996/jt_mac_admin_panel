@@ -1,5 +1,6 @@
 import React from 'react'
-import "./calendar.css";
+//import { Link } from 'react-router-dom'
+//import "./calendar.css";
 import "./style.css";
 
 /**
@@ -25,7 +26,7 @@ const Header = (props) => {
                   <a className="nav-link rounded-pill border-0 px-3 py-1" href="admin-login.html"><span>Admin</span></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link p-0" href="appointment.html"><button className="shadow btn_book rounded-pill bg_green2 border-0 text-white px-3 py-2">Book an appointment</button></a>
+                <button className="shadow btn_book rounded-pill bg_green2 border-0 text-white px-3 py-2">Book an appointment</button>
                 </li>
               </ul>
             </div>

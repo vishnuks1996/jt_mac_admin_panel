@@ -1,6 +1,9 @@
 import React from 'react'
 import './style.css';
 import { Link } from 'react-router-dom'
+import Footer from '../../components/Footer'
+import Header from '../../components/Header'
+import Layout from '../../components/Layout'
 
 /**
 * @author
@@ -9,6 +12,9 @@ import { Link } from 'react-router-dom'
 
 const Landing = (props) => {
   return (
+    <>
+
+    <Layout />
     <div className="home_page page_padding"> {/* home page start */}
       {/* section1 starts */}
       <section className="section1 d-flex align-items-center">
@@ -31,51 +37,30 @@ const Landing = (props) => {
               <div className="content2 position-relative">
                 <img src="images/dots.svg" className="dots" />
 
-
-      <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+      <div id="carousel-home" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to={0} className="active" aria-current="true" aria-label="Slide 1" />
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to={1} aria-label="Slide 2" />
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to={2} aria-label="Slide 3" />
+          <button type="button" data-bs-target="#carousel-home" data-bs-slide-to={0} className="active" aria-current="true" aria-label="Slide 1" />
+          <button type="button" data-bs-target="#carousel-home" data-bs-slide-to={1} aria-label="Slide 2" />
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="..." className="d-block w-100" alt="..." />
+            <img src="images/carousel01.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..." />
+            <img src="images/carousel02.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
             </div>
           </div>
         </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true" />
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true" />
-          <span className="visually-hidden">Next</span>
-        </button>
       </div>
 
 
-                <div className="owl-carousel carousel_1 d-none">
+                {/* <div className="owl-carousel carousel_1 d-none">
                   <div className="item"><img src="images/carousel01.jpg" alt="1" /></div>
                   <div className="item"><img src="images/carousel02.jpg" alt="1" /></div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -242,7 +227,7 @@ const Landing = (props) => {
             <div className="col-md-8">
               <div className="content1 d-flex align-items-center">
                 <h2>"You have got to get what you deserve"</h2>
-                <a href="appointment.html"><button className="ms-2 shadow border-0 text-white bg_green2 btn_primary rounded-pill"> Book an appointment  <i className="fas fa-chevron-right bg-white color_green" /></button></a>
+                <Link to={'/appointment'}><button className="ms-2 shadow border-0 text-white bg_green2 btn_primary rounded-pill"> Book an appointment  <i className="fas fa-chevron-right bg-white color_green" /></button></Link>
               </div>
             </div>
             <div className="col-md-4">
@@ -260,6 +245,8 @@ const Landing = (props) => {
         </div>
       </section>
     </div>
+    
+    </>
   )
 
 }
