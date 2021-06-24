@@ -29,7 +29,7 @@ const Landing = (props) => {
                 1500s, when an unknown printer took a galley of type and scrambled it to
                 make a type specimen book.
                   </p>
-                  <Link to={'/appointment'}><button className="shadow border-0 bg-white text_green bg-white btn_primary rounded-pill"> Book an appointment  <i className="fas fa-chevron-right bg_green2 text-white" /></button></Link>
+                  <Link to={'/mentor_list'}><button className="shadow border-0 bg-white text_green bg-white btn_primary rounded-pill"> Book an appointment  <i className="fas fa-chevron-right bg_green2 text-white" /></button></Link>
                 {/* <a href="appointment.html"><button className="shadow border-0 bg-white text_green bg-white btn_primary rounded-pill"> Book an appointment  <i className="fas fa-chevron-right bg_green2 text-white" /></button></a> */}
               </div>
             </div>

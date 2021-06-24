@@ -1,7 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Landing from './containers/Landing';
@@ -12,40 +11,47 @@ import Payment3 from './containers/Payment3';
 import AdminLogin from './containers/AdminLogin';
 import AdminDashboard from './containers/AdminDashboard';
 import Configuration from './containers/Configuration';
+import ForgotPassword1 from './containers/ForgotPassword1';
+import ForgotPassword2 from './containers/ForgotPassword2';
+import MentorRegistration from './containers/MentorRegistration';
+import MentorList from './containers/MentorList';
+import { useDispatch, useSelector } from 'react-redux';
+import { isUserLoggedIn } from './actions';
+import PrivateRoute from './components/HOC/PrivateRoute'
 
 
 
 function App() {
+
+  const dispatch = useDispatch();
+  const auth = useSelector(state => state.auth)
+
+  useEffect(() => {
+    if (!auth.authenticate) {
+      dispatch(isUserLoggedIn());
+    }
+  }, [auth.authenticate])
+
   return (
     <div>
-      <Header />
-      <Router>
+      <Header />     
         <Switch>
+          <PrivateRoute path="/admindashboard" component={AdminDashboard} />
+          <PrivateRoute path="/configuration" component={Configuration} />
+
           <Route path="/" exact component={Landing} />
           <Route path="/appointment" component={Appointment} />
           <Route path="/payment1" component={Payment1} />
           <Route path="/payment2" component={Payment2} />
           <Route path="/payment3" component={Payment3} />
-          <Route path="/adminlogin" component={AdminLogin} />
-          <Route path="/admindashboard" component={AdminDashboard} />
-          <Route path="/configuration" component={Configuration} />
+          <Route path="/adminlogin" component={AdminLogin} />          
+          <Route path="/forgotpassword1" component={ForgotPassword1} />
+          <Route path="/forgotpassword2" component={ForgotPassword2} />
+          <Route path="/mentorregistration" component={MentorRegistration} />
+          <Route path="/mentor_list" component={MentorList} />
         </Switch>
-      </Router>
       <Footer />
-      
-      {/* <h1>heading</h1> */}
-      {/* <Landing /> */}
-      {/* <Landing></Landing> */}
-      {/* <Appointment></Appointment> */}
-      {/* <Payment1></Payment1> */}
-      {/* <Payment2></Payment2> */}
-      {/* <Payment3></Payment3> */}
-      {/* <AdminLogin></AdminLogin> */}
-      {/* <AdminDashboard></AdminDashboard> */}
-      {/* <Configuration></Configuration> */}
-      
-      
-      </div>
+    </div>
   );
 };
 

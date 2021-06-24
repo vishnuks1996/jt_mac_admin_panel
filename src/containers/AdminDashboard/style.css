@@ -41,4 +41,8 @@ height: 35px;
 max-height: 432px;
     overflow: auto;
 }
+.admin_dashboard_page .section1 .box.opacity
+{
+  opacity: 0.5;
+}
 /*admin dashboard page end*/

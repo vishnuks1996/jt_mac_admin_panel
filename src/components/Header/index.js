@@ -1,5 +1,5 @@
 import React from 'react'
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 //import "./calendar.css";
 import "./style.css";
 
@@ -20,10 +20,14 @@ const Header = (props) => {
             <div className="collapse navbar-collapse" id="header-menu">
               <ul className="navbar-nav ms-auto mb-0">
                 <li className="nav-item home">
-                  <a className="nav-link rounded-pill border-0 px-3 py-1 active" href="index.html"><span>Home</span></a>
+                <Link to={'/'} className="nav-link rounded-pill border-0 px-3 py-1 active" ><span>Home</span></Link>
                 </li>
                 <li className="nav-item admin">
-                  <a className="nav-link rounded-pill border-0 px-3 py-1" href="admin-login.html"><span>Admin</span></a>
+                  <Link to={'/admindashboard'} className="nav-link rounded-pill border-0 px-3 py-1" ><span>Admin</span></Link>
+                  {/* <a className="nav-link rounded-pill border-0 px-3 py-1" href="admin-login.html"><span>Admin</span></a> */}
+                </li>
+                <li className="nav-item admin">
+                  <Link to={'/mentorregistration'} className="nav-link rounded-pill border-0 px-3 py-1"><span>Mentor Registration</span></Link>
                 </li>
                 <li className="nav-item">
                 <button className="shadow btn_book rounded-pill bg_green2 border-0 text-white px-3 py-2">Book an appointment</button>
