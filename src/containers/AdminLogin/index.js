@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import './style.css';
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
@@ -14,12 +14,24 @@ import { login } from "../../actions"
 const AdminLogin = (props) => {
   const emailRef = useRef()
   const passwordRef = useRef()
+  const [error, serError] = useState('')
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (emailRef.current.value === '') {
+      serError('Username is required')
+      return;
+    }
+    if (passwordRef.current.value === '') {
+      serError('password is required')
+      return;
+    }
     dispatch(login(emailRef.current.value, passwordRef.current.value))
+    if(auth.error && !auth.loading){
+      serError('User namae or password is incorrect')
+    }
   }
 
   if (auth.authenticate) {
@@ -38,7 +50,7 @@ const AdminLogin = (props) => {
         </div>
         <div className="container">
           <div className="content p-5 rounded-3">
-          {auth.error && <Alert variant="danger">{auth.error}</Alert>}
+          {(error && !auth.loading ? (<Alert variant="danger">{error}</Alert>): null)}
             <form onSubmit={handleSubmit}>
               <div className="form-floating mb-3">
                 <input type="text" className="form-control" ref={emailRef} id="username" placeholder="username" />
@@ -52,11 +64,11 @@ const AdminLogin = (props) => {
               <Link to={'/forgotpassword1'}><div class="float-end text-white">Forgot Password?</div></Link>
               {/* <Link to={'/admindashboard'}><div className="text-end w-100 d-inline-block"><button  className="shadow border-0 bg_yellow text-white btn_primary rounded-pill mt-3"> Sign In<i className="fas fa-user-tie bg-white color_yellow" /></button></div></Link> */}
               <div className="text-end w-100 d-inline-block">
-              <div class="spinner-border spinner-border-sm text-warning my-1 mx-2 " role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
+              
 
-                <button className="shadow border-0 bg_yellow text-white btn_primary rounded-pill mt-3"> Sign In<i className="fas fa-user-tie bg-white color_yellow" /></button></div>
+               {(!auth.loading  ? (<button className="shadow border-0 bg_yellow text-white btn_primary rounded-pill mt-3"> Sign In<i className="fas fa-user-tie bg-white color_yellow" /></button>): <div class="spinner-border spinner-border-sm text-warning my-1 mx-2 " role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>)} </div>
             </form>
           </div>
         </div>

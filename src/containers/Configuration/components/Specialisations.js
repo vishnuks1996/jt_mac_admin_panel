@@ -109,29 +109,31 @@ const Specialisations = (props) => {
         </Modal.Header>
 
         <Modal.Body>
-          <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
+          <div className="controls align-items-center px-2">
             {error && <Alert variant="danger">{error}</Alert>}
             {inputFields.map(inputField => (
-              <div className="row justify-content-between align-items-end" key={inputField.id}>
-                <div>
-                  <div className="form-floating mx-2">
+              <div className=" " key={inputField.id}>
+                <div className="border bg-light rounded-2 mb-3 p-2 position-relative">
+                  <div className="form-floating m-2">
                     <input type="text" className="form-control" name="specialisation" value={inputField.specialisation} onChange={event => handleChangeInput(inputField.id, event)} id="issue" placeholder="Student issue" />
                     <label htmlFor="issue">Add Specialisation</label>
                   </div>
                   <div className="">
-                    <button disabled={inputFields.length === 1} className="h-25 w-auto d-inline-block btn_delete p-0 btn_primary border-0 rounded-2 text-white bg-danger" onClick={() => handleRemoveFields(inputField.id)}><i className="far fa-trash-alt m-0" /></button>
+                    <button disabled={inputFields.length === 1} className=" d-inline-block btn_delete p-0 btn_primary border-0 rounded-circle text-white bg-danger" onClick={() => handleRemoveFields(inputField.id)}><i className="far fa-trash-alt m-0" /></button>
                   </div>
                 </div>
               </div>
             ))}
 
-            <button onclick="add_slot()" className="mt-2 float-end shadow border-0  bg_yellow btn_primary rounded-pill" onClick={addSlot}> Add Slot </button>
+            <button onclick="add_slot()" className="px-2 float-end shadow border-0  bg_yellow btn_primary rounded-pill" onClick={addSlot}> Add More </button>
           </div>
 
         </Modal.Body>
         <Modal.Footer>
-          <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
-          <button onClick={handleClose} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Close <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
+          <button onClick={handleClose} variant="secondary" className="px-3 shadow border-0 text-dark bg
+                    _light btn_primary rounded-pill"> Close </button>
+          <button className="px-3 shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes </button>
+          
         </Modal.Footer>
       </Modal >
     )
@@ -140,26 +142,49 @@ const Specialisations = (props) => {
 
   const renderDeleteSpecialisationModel = () => {
     return (
+      // <Modal show={deleteSpecialisationModal}
+      //     onHide={() => setDeleteSpecialisationModal(false)} size="lg">
+      //     <Modal.Header closeButton>
+      //       <Modal.Title>Delete Specialisation</Modal.Title>
+      //     </Modal.Header>
+  
+      //     <Modal.Body>
+      //       <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
+      //         {error && <Alert variant="danger">{error}</Alert>}
+      //         <p>Are you sure you want to delete "{deleteItem.specialisation}"</p>
+  
+  
+      //       </div>
+  
+      //     </Modal.Body>
+      //     <Modal.Footer>
+      //       <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={confirmDelete}> Confirm <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
+      //       <button onClick={() => setDeleteSpecialisationModal(false)} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Cancel <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
+      //     </Modal.Footer>
+      //   </Modal >
+
       <Modal show={deleteSpecialisationModal}
-          onHide={() => setDeleteSpecialisationModal(false)} size="lg">
-          <Modal.Header closeButton>
-            <Modal.Title>Delete Specialisation</Modal.Title>
-          </Modal.Header>
-  
-          <Modal.Body>
-            <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
-              {error && <Alert variant="danger">{error}</Alert>}
-              <p>Are you sure you want to delete "{deleteItem.specialisation}"</p>
-  
-  
-            </div>
-  
-          </Modal.Body>
-          <Modal.Footer>
-            <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={confirmDelete}> Confirm <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
-            <button onClick={() => setDeleteSpecialisationModal(false)} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Cancel <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
+      onHide={() => setDeleteSpecialisationModal(false)} >
+      <Modal.Header closeButton>
+        <Modal.Title>Delete Specialisation</Modal.Title>
+      </Modal.Header>
+
+      <Modal.Body>
+        <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
+          {error && <Alert variant="danger">{error}</Alert>}
+          <p className="text-center text-danger">Are you sure you want to delete "{deleteItem.specialisation}"</p>
+
+
+        </div>
+
+      </Modal.Body>
+      <Modal.Footer>
+            <button onClick={() => setDeleteSpecialisationModal(false)} variant="secondary" className="px-3 shadow border-0 text-dark btn_primary rounded-pill"> Cancel </button>
+            <button className="px-3 shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={confirmDelete}> Confirm</button>
+            
           </Modal.Footer>
-        </Modal >
+    </Modal >
+
       )
   }
 

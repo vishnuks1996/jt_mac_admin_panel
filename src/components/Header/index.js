@@ -30,7 +30,7 @@ const Header = (props) => {
                   <Link to={'/mentorregistration'} className="nav-link rounded-pill border-0 px-3 py-1"><span>Mentor Registration</span></Link>
                 </li>
                 <li className="nav-item">
-                <button className="shadow btn_book rounded-pill bg_green2 border-0 text-white px-3 py-2">Book an appointment</button>
+                <Link to={'/mentor_list'}><button className="shadow btn_book rounded-pill bg_green2 border-0 text-white px-3 py-2">Book an appointment</button></Link>
                 </li>
               </ul>
             </div>

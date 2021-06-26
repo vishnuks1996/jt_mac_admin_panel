@@ -33,21 +33,21 @@ export const login = (email, password) => {
     }
 }
 
-export const signout = () => {
+const signout = () => {
     return async dispatch => {
 
         dispatch({ type: authConstants.LOGOUT_REQUEST });
-        const token = window.localStorage.getItem('token');
-        console.log('tk', token)
         auth.signOut().then(() => {
             localStorage.clear();
         })
         .then(() => {
-            const token2 = window.localStorage.getItem('token');
-            console.log('tk2', token2)
             dispatch({ type: authConstants.LOGOUT_SUCCESS });
         })
     }
+}
+
+export {
+    signout
 }
 
 export const isUserLoggedIn = () => {
@@ -66,6 +66,22 @@ export const isUserLoggedIn = () => {
                 type: authConstants.LOGIN_FAILURE,
                 payload: { error: "User namae or password is incorrect" }
             });
+        }
+    }
+}
+
+export const changePassword = (password) => {
+    return async dispatch => {
+        dispatch({ type: authConstants.CHANGE_REQUEST });
+        try {
+            
+            await auth.currentUser.updatePassword(password);
+            dispatch(signout())
+        } catch (error) {
+            dispatch({ 
+                type: authConstants.CHANGE_FAILURE,
+                payload: { error: 'Failed to change password'}
+             });
         }
     }
 }

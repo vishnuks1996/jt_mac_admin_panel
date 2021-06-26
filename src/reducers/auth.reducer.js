@@ -22,6 +22,7 @@ export default (state = initState, action) => {
                 ...state,
                 authenticating: true,
                 loading: true,
+                error: null
             }
             break;
         case authConstants.LOGIN_SUCCESS:
@@ -55,6 +56,21 @@ export default (state = initState, action) => {
             }
             break;
         case authConstants.LOGOUT_FAILURE:
+            state = {
+                ...state,
+                error: action.payload.error,
+                loading: false
+            }
+            break;
+
+        case authConstants.CHANGE_REQUEST:
+            state = {
+                ...state,
+                loading: true,
+            }
+            break;
+
+        case authConstants.CHANGE_FAILURE:
             state = {
                 ...state,
                 error: action.payload.error,

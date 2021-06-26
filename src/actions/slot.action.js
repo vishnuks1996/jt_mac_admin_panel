@@ -3,7 +3,6 @@ import axios from "../helpers/axios";
 
 const getSlot = () => {
     return async dispatch => {
-        const token = window.localStorage.getItem('token');
         try {
             dispatch({ type: slotConstants.GET_SLOTS_REQUEST });
         const res = await axios.get(`mentor/create_slot`, );
@@ -65,6 +64,29 @@ export const deleteSlot = (id) => {
             console.log(err)
             dispatch({
                 type: slotConstants.DELETE_SLOT_FAILURE,
+                payload: { error: err }
+            });
+        }
+    }
+}
+
+export const updateSlot = (slot) => {
+    return async dispatch => {        
+        try {          
+            dispatch({ type: slotConstants.UPDATE_SLOT_REQUEST });
+            const res = await axios.put(`mentor/update_slot/${slot.id}`, {slot});
+            console.log('res', res) 
+            if (res.status === 200) {
+                dispatch({
+                    type: slotConstants.UPDATE_SLOT_SUCCESS,
+                });
+                dispatch(getSlot())
+            } 
+        } catch (error) {
+            const err = error.response.data.message
+            console.log(err)
+            dispatch({
+                type: slotConstants.UPDATE_SLOT_FAILURE,
                 payload: { error: err }
             });
         }

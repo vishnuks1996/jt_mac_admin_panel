@@ -167,31 +167,31 @@ const Slots = (props) => {
     const renderAddSlotModel = () => {
         return (
             <Modal show={show}
-                onHide={handleClose} size="lg">
+                onHide={handleClose} size="lg" className="slot_modal">
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal title</Modal.Title>
+                    <Modal.Title>Add Slots</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
-                    <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
+                    <div className="controls align-items-center px-3">
                         {error && <Alert variant="danger">{error}</Alert>}
                         {inputFields.map(inputField => (
-                            <div className="row justify-content-between align-items-end" key={updateItem.id}>
-                                <div>
+                            <div className="" key={updateItem.id}>
+                                <div className="row border bg-light rounded-2 mb-3 p-2 position-relative">
           
-                                    <div className="text-start mx-1 col">
+                                    <div className="text-start col-md-6 col-lg-3">
                                         <label htmlFor="time1">From Time</label>
                                         <input type="time" className="form-control" value={inputField.fromTime1} required name="fromTime" id="time1" onChange={event => handleChangeTimeInput(inputField.id, event, 'romTime1')} placeholder="11:00 am - 12:30 pm" />
                                     </div>
-                                    <div className="text-start mx-1 col">
+                                    <div className="text-start col-md-6 col-lg-3">
                                         <label htmlFor="time2">To Time</label>
                                         <input type="time" className="form-control" value={inputField.toTime1} required name="toTime" id="time2" onChange={event => handleChangeTimeInput(inputField.id, event, 'toTime1')} placeholder="11:00 am - 12:30 pm" />
                                     </div>
-                                    <div className="text-start  mx-1 col">
+                                    <div className="text-start col-md-6 col-lg-3">
                                         <label htmlFor="date">Date</label>
                                         <input type="date" className="form-control" value={inputField.date} required name="date" id="date" onChange={event => handleChangeInput(inputField.id, event)} placeholder="12-06-2021" />
                                     </div>
-                                    <div class="text-start  mx-1 col">
+                                    <div class="text-start col-md-6 col-lg-3">
                                         <label for="inputlocation">Location</label>
                                         <select class="form-select" id="inputlocation" value={inputField.location} required name="location" aria-label="Floating label select example" onChange={event => handleChangeInput(inputField.id, event)}>
                                             <option value=''>----</option>
@@ -202,19 +202,21 @@ const Slots = (props) => {
                                         </select>
                                     </div>
                                     <div className="">
-                                        <button disabled={inputFields.length === 1} className="h-25 w-auto d-inline-block btn_delete p-0 btn_primary border-0 rounded-2 text-white bg-danger" onClick={() => handleRemoveFields(inputField.id)}><i className="far fa-trash-alt m-0" /></button>
+                                        <button disabled={inputFields.length === 1} className=" d-inline-block btn_delete p-0 btn_primary border-0 rounded-circle text-white bg-danger" onClick={() => handleRemoveFields(inputField.id)}><i className="far fa-trash-alt m-0" /></button>
                                     </div>
                                 </div>
                             </div>
                         ))}
 
-                        <button onclick="add_slot()" className="mt-2 float-end shadow border-0  bg_yellow btn_primary rounded-pill" onClick={addSlot}> Add Slot </button>
+                        <button onclick="add_slot()" className="px-2 mt-2 float-end shadow border-0  bg_yellow btn_primary rounded-pill" onClick={addSlot}> Add More</button>
                     </div>
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
-                    <button onClick={handleClose} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Close <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
+                    <button onClick={handleClose} variant="secondary" className="px-3 shadow border-0 text-dark bg
+                    _light btn_primary rounded-pill"> Close </button>
+                    <button className="px-3 shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes </button>
+                    
                 </Modal.Footer>
             </Modal >
         )
@@ -223,7 +225,7 @@ const Slots = (props) => {
     const renderDeleteSlotModel = () => {
         return (
             <Modal show={deleteSlotModal}
-                onHide={() => setDeleteSlotModal(false)} size="lg">
+                onHide={() => setDeleteSlotModal(false)} >
                 <Modal.Header closeButton>
                     <Modal.Title>Delete Slot</Modal.Title>
                 </Modal.Header>
@@ -231,15 +233,16 @@ const Slots = (props) => {
                 <Modal.Body>
                     <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
                         {error && <Alert variant="danger">{error}</Alert>}
-                        <p>Are you sure you want to delete </p>
+                        <p className="text-center text-danger">Are you sure you want to delete </p>
 
 
                     </div>
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={confirmDelete}> Confirm <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
-                    <button onClick={() => setDeleteSlotModal(false)} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Cancel <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
+                    <button onClick={() => setDeleteSlotModal(false)} variant="secondary" className="px-3 shadow border-0 text-dark btn_primary rounded-pill"> Cancel </button>
+                    <button className="px-3 shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={confirmDelete}> Confirm </button>
+                    
                 </Modal.Footer>
             </Modal >
         )
@@ -247,30 +250,78 @@ const Slots = (props) => {
 
     const renderUpdateSlotModel = () => {
         return (
+            // <Modal show={updateSlotModal}
+            //     onHide={() => setUpdateSlotModal(false)} size="lg">
+            //     <Modal.Header closeButton>
+            //         <Modal.Title>Modal title</Modal.Title>
+            //     </Modal.Header>
+
+            //     <Modal.Body>
+            //         <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
+            //             {error && <Alert variant="danger">{error}</Alert>}
+            //             <div className="row justify-content-between align-items-end" key={updateItem.id}>
+            //                 <div>
+            //                     <div className="text-start mx-1 col">
+            //                         <label htmlFor="time1">From Time</label>
+            //                         <input type="text" className="form-control" value={updateFromTime} required name="fromTime" id="time1" onChange={e => setUpdateFromTime(e.target.value)} placeholder="11:00 am - 12:30 pm" />
+            //                     </div>
+            //                     <div className="text-start mx-1 col">
+            //                         <label htmlFor="time2">To Time</label>
+            //                         <input type="text" className="form-control" value={updateToTime} required name="toTime" id="time2" onChange={e => setUpdateToTime(e.target.value)} placeholder="11:00 am - 12:30 pm" />
+            //                     </div>
+            //                     <div className="text-start  mx-1 col">
+            //                         <label htmlFor="date">Date</label>
+            //                         <input type="text" className="form-control" value={updateDate} required name="date" id="date" onChange={e => setUpdateDate(e.target.value)} placeholder="12-06-2021" />
+            //                     </div>
+            //                     <div class="text-start  mx-1 col">
+            //                         <label for="inputlocation">Location</label>
+            //                         <select class="form-select" id="inputlocation" required name="location" onChange={e => setUpdateLocationId(e.target.value)} aria-label="Floating label select example" >
+            //                             <option value={updateLocationId}>{updateItem.location}</option>
+            //                             {slots.locations.length > 0 ? slots.locations.map(location => (
+            //                                 <option value={location.id}>{location.location}</option>
+            //                             )) : null}
+
+            //                         </select>
+            //                     </div>
+
+            //                 </div>
+            //             </div>
+
+
+            //             <button onclick="add_slot()" className="mt-2 float-end shadow border-0  bg_yellow btn_primary rounded-pill" onClick={addSlot}> Add Slot </button>
+            //         </div>
+
+            //     </Modal.Body>
+            //     <Modal.Footer>
+            //         <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
+            //         <button onClick={() => setUpdateSlotModal(false)} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Close <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
+            //     </Modal.Footer>
+            // </Modal >
+
             <Modal show={updateSlotModal}
                 onHide={() => setUpdateSlotModal(false)} size="lg">
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal title</Modal.Title>
+                    <Modal.Title>Update slot</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
-                    <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
+                    <div className="controls align-items-center px-3">
                         {error && <Alert variant="danger">{error}</Alert>}
-                        <div className="row justify-content-between align-items-end" key={updateItem.id}>
-                            <div>
-                                <div className="text-start mx-1 col">
+                        <div key={updateItem.id}>
+                            <div className="row border bg-light rounded-2 mb-3 p-2 position-relative">
+                                <div className="text-start col-md-6 col-lg-3">
                                     <label htmlFor="time1">From Time</label>
                                     <input type="text" className="form-control" value={updateFromTime} required name="fromTime" id="time1" onChange={e => setUpdateFromTime(e.target.value)} placeholder="11:00 am - 12:30 pm" />
                                 </div>
-                                <div className="text-start mx-1 col">
+                                <div className="text-start col-md-6 col-lg-3">
                                     <label htmlFor="time2">To Time</label>
                                     <input type="text" className="form-control" value={updateToTime} required name="toTime" id="time2" onChange={e => setUpdateToTime(e.target.value)} placeholder="11:00 am - 12:30 pm" />
                                 </div>
-                                <div className="text-start  mx-1 col">
+                                <div className="text-start  col-md-6 col-lg-3">
                                     <label htmlFor="date">Date</label>
                                     <input type="text" className="form-control" value={updateDate} required name="date" id="date" onChange={e => setUpdateDate(e.target.value)} placeholder="12-06-2021" />
                                 </div>
-                                <div class="text-start  mx-1 col">
+                                <div class="text-start  col-md-6 col-lg-3">
                                     <label for="inputlocation">Location</label>
                                     <select class="form-select" id="inputlocation" required name="location" onChange={e => setUpdateLocationId(e.target.value)} aria-label="Floating label select example" >
                                         <option value={updateLocationId}>{updateItem.location}</option>
@@ -285,15 +336,17 @@ const Slots = (props) => {
                         </div>
 
 
-                        <button onclick="add_slot()" className="mt-2 float-end shadow border-0  bg_yellow btn_primary rounded-pill" onClick={addSlot}> Add Slot </button>
                     </div>
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
-                    <button onClick={() => setUpdateSlotModal(false)} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Close <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
+                    <button onClick={() => setUpdateSlotModal(false)} variant="secondary" className="px-3 shadow border-0 text-dark btn_primary rounded-pill"> Cancel </button>
+                    <button className="px-3 shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes </button>
+                    
                 </Modal.Footer>
             </Modal >
+
+
         )
     }
 

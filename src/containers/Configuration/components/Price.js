@@ -14,6 +14,7 @@ const Price = (props) => {
   const [show, setShow] = useState(false);
   const [ftf, setFtf] = useState(false);
   const [audio, setAudio] = useState(false);
+  const [video, setVideo] = useState(false);
   const [error, seterror] = useState('');
   const dispatch = useDispatch()
 
@@ -37,7 +38,8 @@ const Price = (props) => {
     }
     const fees = {
       "ftfConsultationFee": ftf,
-      "audioConsultationFee": audio
+      "audioConsultationFee": audio,
+      "videoConsultationFee": video
     }
     // const form = new FormData();
     // form.append("ftfConsultationFee", ftf);
@@ -50,6 +52,7 @@ const Price = (props) => {
   const changePrice = () => {
     setFtf(price.fees.ftfConsultationFee)
     setAudio(price.fees.audioConsultationFee)
+    setVideo(price.fees.videoConsultationFee)
     setShow(true)
   }
 
@@ -61,17 +64,15 @@ const Price = (props) => {
           <div className="data_wrap">
             <div className="data d-flex justify-content-between bg_yellow rounded-3 align-items-center p-2 mb-2">
               <div className="me-2">Face to Face consultation fee</div><div className="me-2">{price.fees.ftfConsultationFee}</div>
-              <div>
-               
-
-              </div>
+              
+            </div>
+            <div className="data d-flex justify-content-between bg_yellow rounded-3 align-items-center p-2 mb-2">
+              <div className="me-2">Video consultation fee</div><div className="me-2">{price.fees.videoConsultationFee}</div>
+              
             </div>
             <div className="data d-flex justify-content-between bg_yellow rounded-3 align-items-center p-2 mb-2">
               <div className="me-2">Audio consultation fee</div><div className="me-2">{price.fees.audioConsultationFee}</div>
-              <div>
-                
-
-              </div>
+              
             </div>
           </div>
         
@@ -81,31 +82,39 @@ const Price = (props) => {
       <Modal show={show}
         onHide={handleClose} >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Consultation Fees</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
         {error && <Alert variant="danger">{error}</Alert>}
-          <div className="controls bg-light d-flex justify-content-between align-items-center mt-3 p-2 rounded-2">
-            <label>Face to Face consultation fee</label>
-            <div className="form-floating mx-2">
+          <div className="border bg-light rounded-2 mx-3 mb-3 p-3 position-relative">
+            <div className="form-floating">
               <input type="number" className="form-control" id="price1" value={ftf} onChange={(e) => setFtf(e.target.value)} />
-              
+              <label htmlFor="price1">Face to Face consultation fee</label>
             </div>            
       
           </div>
-          <div className="controls bg-light d-flex justify-content-between align-items-center mt-3 p-2 rounded-2">
-            <label>Audio consultation fee</label>
-            <div className="form-floating mx-2">
+          <div className="border bg-light rounded-2 mx-3 mb-3 p-3 position-relative">
+            <div className="form-floating">
+              <input type="number" className="form-control" id="price1" value={video} onChange={(e) => setVideo(e.target.value)} />
+              <label htmlFor="price1">Video consultation fee</label>
+            </div>            
+      
+          </div>
+          <div className="border bg-light rounded-2 mx-3 mb-3 p-3 position-relative">
+            
+            <div className="form-floating">
               <input type="number" className="form-control" id="price2" value={audio} onChange={(e) => setAudio(e.target.value)}/>
-              
+              <label htmlFor="price2">Audio consultation fee</label>
             </div>            
           </div>
           
         </Modal.Body>
         <Modal.Footer>
-          <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
-          <button onClick={handleClose} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Close <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
+          <button onClick={handleClose} variant="secondary" className="px-3 shadow border-0 text-dark 
+                     btn_primary rounded-pill"> Close </button>
+          <button className="px-3 shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes </button>
+          
         </Modal.Footer>
       </Modal >
     </>

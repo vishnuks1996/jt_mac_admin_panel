@@ -99,33 +99,35 @@ const Price = (props) => {
             <Modal show={show}
             onHide={handleClose} >
             <Modal.Header closeButton>
-                <Modal.Title>Modal title</Modal.Title>
+                <Modal.Title>Add Locations</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
+                <div className="controls ">
                     {error && <Alert variant="danger">{error}</Alert>}
                     {inputFields.map(inputField => (
-                        <div className="row justify-content-between align-items-end" key={inputField.id}>
+                        <div className=" border bg-light rounded-2 mb-3 p-3 position-relative" key={inputField.id}>
                             <div>
-                                <div className="form-floating mx-2">
+                                <div className="form-floating ">
                                     <input type="text" className="form-control" name="location" value={inputField.location} onChange={event => handleChangeInput(inputField.id, event)} id="location" placeholder="Thrissur" />
                                     <label htmlFor="location">Add Location</label>
                                 </div>
                                 <div className="">
-                                    <button disabled={inputFields.length === 1} className="h-25 w-auto d-inline-block btn_delete p-0 btn_primary border-0 rounded-2 text-white bg-danger" onClick={() => handleRemoveFields(inputField.id)}><i className="far fa-trash-alt m-0" /></button>
+                                    <button disabled={inputFields.length === 1} className=" d-inline-block btn_delete p-0 btn_primary border-0 rounded-circle text-white bg-danger" onClick={() => handleRemoveFields(inputField.id)}><i className="far fa-trash-alt m-0" /></button>
                                 </div>
                             </div>
                         </div>
                     ))}
 
-                    <button className="mt-2 float-end shadow border-0  bg_yellow btn_primary rounded-pill" onClick={addMore}> Add more </button>
+                    <button className="px-2 float-end shadow border-0  bg_yellow btn_primary rounded-pill" onClick={addMore}> Add more </button>
                 </div>
 
             </Modal.Body>
             <Modal.Footer>
-                <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
-                <button onClick={handleClose} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Close <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
+                <button onClick={handleClose} variant="secondary" className="px-3 shadow border-0 text-dark bg
+                    _light btn_primary rounded-pill"> Close </button>
+                <button className="px-3 shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={handleSubmit}> Save Changes </button>
+                
             </Modal.Footer>
         </Modal >
         )
@@ -133,26 +135,49 @@ const Price = (props) => {
 
     const renderDeleteLocationModel = () => {
         return (
-            <Modal show={deleteLocationModal}
-            onHide={() => setDeleteLocationModal(false)} size="lg">
-            <Modal.Header closeButton>
-              <Modal.Title>Delete Location</Modal.Title>
-            </Modal.Header>
+        //     <Modal show={deleteLocationModal}
+        //     onHide={() => setDeleteLocationModal(false)} size="lg">
+        //     <Modal.Header closeButton>
+        //       <Modal.Title>Delete Location</Modal.Title>
+        //     </Modal.Header>
     
-            <Modal.Body>
-              <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
-                {error && <Alert variant="danger">{error}</Alert>}
-                <p>Are you sure you want to delete "{deleteItem.location}"</p>
+        //     <Modal.Body>
+        //       <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
+        //         {error && <Alert variant="danger">{error}</Alert>}
+        //         <p>Are you sure you want to delete "{deleteItem.location}"</p>
     
     
-              </div>
+        //       </div>
     
-            </Modal.Body>
-            <Modal.Footer>
-              <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={confirmDelete}> Confirm <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
-              <button onClick={() => setDeleteLocationModal(false)} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Cancel <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
-            </Modal.Footer>
-          </Modal >
+        //     </Modal.Body>
+        //     <Modal.Footer>
+        //       <button className="shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={confirmDelete}> Confirm <i className="fas fa-cloud-upload-alt bg-white color_green" aria-hidden="true" /></button>
+        //       <button onClick={() => setDeleteLocationModal(false)} variant="secondary" className="shadow border-0 text-white bg-danger btn_primary rounded-pill"> Cancel <i className="fas fa-times bg-white text-dark" aria-hidden="true" /></button>
+        //     </Modal.Footer>
+        //   </Modal >
+
+        <Modal show={deleteLocationModal}
+        onHide={() => setDeleteLocationModal(false)} >
+        <Modal.Header closeButton>
+          <Modal.Title>Delete Location</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <div className="controls bg-light align-items-center mt-3 p-2 rounded-2">
+            {error && <Alert variant="danger">{error}</Alert>}
+            <p className="text-center text-danger">Are you sure you want to delete "{deleteItem.location}"</p>
+
+
+          </div>
+
+        </Modal.Body>
+        <Modal.Footer>
+            <button onClick={() => setDeleteLocationModal(false)} variant="secondary" className="px-3 shadow border-0 text-dark btn_primary rounded-pill"> Cancel</button>
+          
+          <button className="px-3 shadow border-0 text-white bg_green2 btn_primary rounded-pill" onClick={confirmDelete}> Confirm </button>
+        </Modal.Footer>
+      </Modal >
+
         )
     }
 

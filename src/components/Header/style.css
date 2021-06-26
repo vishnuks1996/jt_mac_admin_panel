@@ -243,5 +243,62 @@ header nav .btn_book
 
 
 
+
+/* modal */
+.modal-body .btn_delete
+{
+  right: -10px;
+  position: absolute;
+  top: -10px;
+  height: 30px;
+  width: 30px;
+}
+.modal-header .close
+{
+  border: none;
+}
+
+/* mentor lisr */
+.page_mentorlist .card-img-top
+{
+  max-width: 100px;
+  margin: auto;
+}
+
+/* appointment */
+.appointment_page .slot_selection .card .slot_check
+{
+  border-radius: 100px;
+  font-size: 12px;
+  margin: 3px;
+  border: 1px solid #bbbbbb;
+  padding: 4px 10px;
+} 
+.appointment_page .slot_selection .card .btn-check:active+.slot_check, 
+.appointment_page .slot_selection .card .btn-check:checked+.slot_check, 
+.appointment_page .slot_selection .card .slot_check.active, 
+.appointment_page .slot_selection .card .slot_check.dropdown-toggle.show, 
+.appointment_page .slot_selection .card .slot_check:active 
+{
+  background-color: #326247;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width:768px)
+{
+  .home_page .section5 .content1::before
+  {
+    display:none;
+  }
+}
  
 

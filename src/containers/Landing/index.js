@@ -65,7 +65,7 @@ const Landing = (props) => {
             </div>
           </div>
         </div>
-        <div className="gradient h-100 position-absolute" />
+        <div className="gradient h-100 position-absolute d-none d-md-block" />
       </section>
       {/* section1 end */}
       {/* section2 starts */}
@@ -77,7 +77,7 @@ const Landing = (props) => {
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
             </div>
-            <div className="col-md-3 d-flex align-items-center"><a href> <i className="fas fa-chevron-right btn_more bg_green2 text-white" /></a></div>
+            
           </div>
         </div>
       </section>
@@ -183,11 +183,11 @@ const Landing = (props) => {
             <div className="col-md-5">
               <div className="content2">
                 <div className="row">
-                  <div className="col-md-6 ">
+                  <div className="col-md-6 col-6 ">
                     <img src="images/student.png" className="w-100 shadow-sm mb-3" />
                     <img src="images/startup.png" className="w-100 shadow-sm mb-3" />
                   </div>
-                  <div className="col-md-6 pt-5">
+                  <div className="col-md-6 col-6 pt-5">
                     <img src="images/envi.png" className="w-100 shadow-sm mb-3" />
                     <img src="images/interview.png" className="w-100 shadow-sm mb-3" />
                   </div>
@@ -205,10 +205,10 @@ const Landing = (props) => {
             <div className="col-md-7">
               <h3 className="color_green mb-5"><strong><span>4</span> steps to your solution</strong></h3>
               <div className="content1 position-relative">
-                <div className="d-flex align-items-center mb-4"><span className="bg_yellow text-white text-center shadow-sm me-3">1</span><h5>Book an audio or face to face session with JT</h5></div>
-                <div className="d-flex align-items-center mb-4"><span className="bg_yellow text-white text-center shadow-sm me-3">2</span><h5>Choose date, location &amp; time slot</h5></div>
-                <div className="d-flex align-items-center mb-4"><span className="bg_yellow text-white text-center shadow-sm me-3">3</span><h5>Fill the form</h5></div>
-                <div className="d-flex align-items-center mb-4"><span className="bg_yellow text-white text-center shadow-sm me-3">4</span><h5>Payment</h5></div>
+                <div className="d-flex align-items-center mb-4"><span className="bg_yellow text-white text-center shadow-sm me-3 d-none d-sm-block">1</span><h5>Book an audio or face to face session with JT</h5></div>
+                <div className="d-flex align-items-center mb-4"><span className="bg_yellow text-white text-center shadow-sm me-3 d-none d-sm-block">2</span><h5>Choose date, location &amp; time slot</h5></div>
+                <div className="d-flex align-items-center mb-4"><span className="bg_yellow text-white text-center shadow-sm me-3 d-none d-sm-block">3</span><h5>Fill the form</h5></div>
+                <div className="d-flex align-items-center mb-4"><span className="bg_yellow text-white text-center shadow-sm me-3 d-none d-sm-block">4</span><h5>Payment</h5></div>
               </div>
             </div>
             <div className="col-md-5 d-flex align-items-center">
@@ -224,13 +224,13 @@ const Landing = (props) => {
       <section className="section6 py-5 my-5 position-relative bg-light">
         <div className="container">
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-8 col-12">
               <div className="content1 d-flex align-items-center">
-                <h2>"You have got to get what you deserve"</h2>
-                <Link to={'/appointment'}><button className="ms-2 shadow border-0 text-white bg_green2 btn_primary rounded-pill"> Book an appointment  <i className="fas fa-chevron-right bg-white color_green" /></button></Link>
+                <h2 className="d-none d-sm-block">"You have got to get what you deserve"</h2>
+                <Link to={'/mentor_list'}><button className="ms-2 mb-3 mb-sm-0 shadow border-0 text-white bg_green2 btn_primary rounded-pill"> Book an appointment  <i className="fas fa-chevron-right bg-white color_green" /></button></Link>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 col-12">
               <div className="content2 bg-white p-3">
                 <strong>Available Day and Time</strong>
                 <small>

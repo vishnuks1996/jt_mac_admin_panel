@@ -12,8 +12,8 @@ import AdminLogin from './containers/AdminLogin';
 import AdminDashboard from './containers/AdminDashboard';
 import Configuration from './containers/Configuration';
 import ForgotPassword1 from './containers/ForgotPassword1';
-import ForgotPassword2 from './containers/ForgotPassword2';
 import MentorRegistration from './containers/MentorRegistration';
+import ChangePassword from './containers/ChangePassword';
 import MentorList from './containers/MentorList';
 import { useDispatch, useSelector } from 'react-redux';
 import { isUserLoggedIn } from './actions';
@@ -38,17 +38,18 @@ function App() {
         <Switch>
           <PrivateRoute path="/admindashboard" component={AdminDashboard} />
           <PrivateRoute path="/configuration" component={Configuration} />
+          <PrivateRoute path="/change_password" component={ChangePassword} />
 
           <Route path="/" exact component={Landing} />
-          <Route path="/appointment" component={Appointment} />
+          <Route path="/appointment/:id" component={Appointment} />
           <Route path="/payment1" component={Payment1} />
           <Route path="/payment2" component={Payment2} />
           <Route path="/payment3" component={Payment3} />
           <Route path="/adminlogin" component={AdminLogin} />          
           <Route path="/forgotpassword1" component={ForgotPassword1} />
-          <Route path="/forgotpassword2" component={ForgotPassword2} />
           <Route path="/mentorregistration" component={MentorRegistration} />
           <Route path="/mentor_list" component={MentorList} />
+         
         </Switch>
       <Footer />
     </div>

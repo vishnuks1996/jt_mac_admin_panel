@@ -2,9 +2,10 @@ import { initialDataConstants } from "../actions/constants";
 
 const initSate = {
     appointments: [],
-    locations:[],
-    mentorRequests:[],
-    error: null
+    locations: [],
+    mentorRequests: [],
+    error: null,
+    loading: ''
 }
 
 export default (state = initSate, action) => {
@@ -29,7 +30,12 @@ export default (state = initSate, action) => {
                 error: action.payload.error,
             }
             break;
+        // case initialDataConstants.APPROVE_MENTOR_FAILURE:
+        //     state = {
+        //         ...state,
+        //     }
+        //     break;
     }
-    
+
     return state;
 }
