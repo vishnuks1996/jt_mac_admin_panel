@@ -1,4 +1,4 @@
-export const api = "http://localhost:3000";
+export const api = "http://18.116.10.15";
 export const generatePublicUrl = (fileName) => {
-    return `http://localhost:3000/uploads/${fileName}`;
+    return `http://18.116.10.15/uploads/${fileName}`;
 };
