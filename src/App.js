@@ -43,7 +43,7 @@ function App() {
           <Route path="/" exact component={Landing} />
           <Route path="/appointment/:id" component={Appointment} />
           <Route path="/payment1" component={Payment1} />
-          <Route path="/payment2" component={Payment2} />
+          <Route path="/payment" component={Payment2} />
           <Route path="/payment3" component={Payment3} />
           <Route path="/adminlogin" component={AdminLogin} />          
           <Route path="/forgotpassword1" component={ForgotPassword1} />

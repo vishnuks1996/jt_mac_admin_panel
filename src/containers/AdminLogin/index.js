@@ -14,23 +14,23 @@ import { login } from "../../actions"
 const AdminLogin = (props) => {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const [error, serError] = useState('')
+  const [error, setError] = useState('')
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (emailRef.current.value === '') {
-      serError('Username is required')
+      setError('Username is required')
       return;
     }
     if (passwordRef.current.value === '') {
-      serError('password is required')
+      setError('password is required')
       return;
     }
     dispatch(login(emailRef.current.value, passwordRef.current.value))
     if(auth.error && !auth.loading){
-      serError('User namae or password is incorrect')
+      setError('User namae or password is incorrect')
     }
   }
 
