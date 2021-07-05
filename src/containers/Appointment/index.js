@@ -172,7 +172,7 @@ const Appointment = (props) => {
 
   return (
     <>
-      <div className="appointment_page page_padding"> {/* appointment page start */}
+      <div className="appointment_page page_padding"> 
         {/* section1 starts */}
         <section className="section1 pb-5">
           <div className="title bg_green py-3 mb-5">
@@ -273,7 +273,7 @@ const Appointment = (props) => {
         </section>
         {/* section1 end */}
         <hr />
-      </div> /* appointment page end */
+      </div>
       <Modal show={show}
         onHide={handleClose}>
         <Modal.Header >

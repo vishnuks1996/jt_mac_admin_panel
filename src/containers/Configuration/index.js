@@ -23,7 +23,7 @@ const Configuration = (props) => {
         />
           <div className="container-fluid">
             <div className="content1 position-relative ">
-              <div className="nav w-100 d-flex justify-content-center">
+              <div className="nav w-100 d-block d-sm-flex justify-content-center">
                 <div className="bg_yellow rounded-3 p-3 mx-1 active" id="pills_slot_tab" data-bs-toggle="pill" data-bs-target="#pills_slot" role="tab" aria-controls="pills_slot" aria-selected="true">
                   <h6 className="m-0 position-relative text-white"><strong>SLOTS</strong></h6>
                 </div>

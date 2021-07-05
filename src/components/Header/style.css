@@ -299,6 +299,28 @@ header nav .btn_book
   {
     display:none;
   }
+  .configuration_page .section1 .content1 .nav 
+  {
+    white-space: nowrap;
+    overflow: auto;
+    
+  }
+  .configuration_page .section1 .content1 .nav > div
+  {
+    display: inline-block;
+  }
+  
+}
+@media (max-width:540px)
+{
+  .data_wrap .data 
+  {
+    display: block!important;
+  }
+  .data_wrap .data > div
+  {
+    padding: 5px 0;
+  }
 }
  
 
