@@ -147,12 +147,6 @@ const Appointment = (props) => {
         paymentObject.open()
         paymentObject.on('payment.failed', (response) => {
           alert(response.error.code);
-          // alert(response.error.description);
-          // alert(response.error.source);
-          // alert(response.error.step);
-          // alert(response.error.reason);
-          // alert(response.error.metadata.order_id);
-          // alert(response.error.metadata.payment_id);
         })
       }
     } catch (err) {
@@ -250,13 +244,15 @@ const Appointment = (props) => {
                         slots.filter(slot => {
                           if (slot.date == date && slot.LocationId == locationId) {
                             return slot
-                          } 
+                          } else if (date === '' || locationId === ''){
+                            return slot
+                          }
                         }).map(slot => (
                           <div className="d-inline-block">
-                            <input type="radio" className="btn-check" value={slot.id} name="slot" onChange={(e) => setSlotId(e.target.value)} id="slot1" autoComplete="off" />
-                            <label className="slot_check" htmlFor="slot1">{slot.fromTime}-{slot.toTime}</label>
+                            <input type="radio" className="btn-check" value={slot.id} name="slot" onChange={(e) => setSlotId(e.target.value)} id={slot.id} autoComplete="off" />
+                            <label className="slot_check text-center" htmlFor={slot.id}> <div class="d-block">Date: {slot.date} </div> <div class="d-block">Time: {slot.fromTime}-{slot.toTime}</div></label>
                           </div>
-                        )) : <h2>No slot available</h2>}
+                        )) : null}
 
                     </div>
                   </div>
