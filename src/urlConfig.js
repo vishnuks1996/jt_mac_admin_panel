@@ -1,4 +1,4 @@
-export const api = "http://3.137.172.176/";
+export const api = "https://backend.jtmac.in/";
 export const generatePublicUrl = (fileName) => {
-    return `http://3.137.172.176//uploads/${fileName}`;
+    return `https://backend.jtmac.in/${fileName}`;
 };
